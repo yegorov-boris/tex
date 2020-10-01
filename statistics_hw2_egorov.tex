@@ -1,0 +1,183 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Борис Егоров}
+\title{ДЗ2 статистика}
+\begin{document}
+	\maketitle
+	\section*{задание 1.2}
+	\begin{large}
+		\subsection*{1}
+		\[ F(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x<5$};\\
+			\frac{x-5}{2} & \mbox{, $x \in [5, 7]$};\\
+			1 & \mbox{, $x>7$}.\end{array} \right. \]
+		\subsection*{2}
+			\[ F(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x<1$};\\
+			\sqrt{x-1} & \mbox{, $x \in [1, 2]$};\\
+			1 & \mbox{, $x>2$}.\end{array} \right. \]
+		\subsection*{3}
+		$\omega^{\alpha}\ge 1$\\
+		\\
+		$P(\omega^{\alpha}<x)=P(\omega > x^{\frac{1}{\alpha}})=1-x^{\frac{1}{\alpha}}$\\
+		\\
+		\[ F(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x<1$};\\
+			1-x^{\frac{1}{\alpha}} & \mbox{, $x\ge 1$}.\end{array} \right. \]
+		\subsection*{4}
+		$P(sin(\pi \omega)<x)=P(sin(\pi \omega)<x |\omega<\frac{1}{2})+P(sin(\pi \omega)<x |\omega \ge \frac{1}{2})\\=
+		\frac{2arcsin(x)}{\pi}$\\
+		\\
+		\[ F(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x<0$};\\
+			\frac{2arcsin(x)}{\pi} & \mbox{, $x \in [0,1]$};\\
+			1 & \mbox{, $x>1$}.\end{array} \right. \]
+		\subsection*{5}
+		$P(X(\omega)<x)=P(2\omega<x|\omega < \frac{1}{2})+P(2(1-\omega)<x|\omega \ge \frac{1}{2})\\
+		=x$\\
+		\\
+		\[ F(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x<0$};\\
+			x & \mbox{, $x \in [0,1]$};\\
+			1 & \mbox{, $x>1$}.\end{array} \right. \]
+		\subsection*{6}
+		$(\frac{2}{3})^3=\frac{8}{27}$\\
+		\\
+		$\frac{1}{3}+\frac{8}{27}=\frac{17}{27}$\\
+		\\
+		\[ F(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x<-1$};\\
+			\\
+			\frac{1}{3} & \mbox{, $-1 \le x < 0$};\\
+			\\
+			x+\frac{1}{3} & \mbox{, $0 \le x < \frac{8}{27}$};\\
+			\\
+			x+(x^{\frac{1}{3}}-\frac{2}{3})+\frac{1}{3}=x+x^{\frac{1}{3}}-\frac{1}{3} & \mbox{, $\frac{8}{27} \le x < \frac{1}{3}$};\\
+			\\
+			x^{\frac{1}{3}} & \mbox{, $\frac{1}{3} \le x < 1$};\\
+			\\
+			1 & \mbox{, $x>1$}.\end{array} \right. \]
+	\end{large}
+	\section*{задание 1.3}
+	\begin{large}
+		\subsection*{1}
+		\[ f(x) = \left\{ \begin{array}{ll}
+			\frac{1}{2} & \mbox{, $x \in [5, 7]$};\\
+			0 & \mbox{, $x \notin [5,7]$}.\end{array} \right. \]
+		\subsection*{2}
+		\[ f(x) = \left\{ \begin{array}{ll}
+			\frac{1}{2\sqrt{x-1}} & \mbox{, $x \in (1, 2]$};\\
+			0 & \mbox{, $x \notin (1, 2]$}.\end{array} \right. \]
+		\subsection*{3}
+		\[ f(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x<1$};\\
+			\frac{-x^{\frac{1}{\alpha}-1}}{\alpha} & \mbox{, $x\ge 1$}.\end{array} \right. \]
+		\subsection*{4}
+		\[ f(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x \notin [0,1)$};\\
+			\frac{2}{\pi \sqrt{1-x^2}} & \mbox{, $x \in [0,1)$}.\end{array} \right. \]
+		\subsection*{5}
+		\[ f(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x \notin [0,1]$};\\
+			1 & \mbox{, $x \in [0,1]$}.\end{array} \right. \]
+		\subsection*{6}
+		плотность $f(x)$ не существеут, так как $\lbrace-1\rbrace$ - множество меры $0$, но $P(x=-1)=\frac{1}{3}\ne 0$\\
+	\end{large}
+	\section*{задание 1.4}
+	\begin{large}
+		площадь треуголльника $S = 1$\\
+		\subsection*{1}
+		$f(x) = \frac{dS(x)}{Sdx} = \frac{dS(x)}{dx} = \frac{y(x)dx}{dx} = y(x) = \frac{x}{2}$\\
+		\\
+		$F(x) = \int_{-\infty}^{x} f(t) dt = \int_{0}^{2} \frac{t}{2} dt = \frac{x^2}{4}$\\
+		\\
+		\[ f(x) = \left\{ \begin{array}{ll}
+			\frac{x}{2} & \mbox{, $x \in [0, 2]$};\\
+			0 & \mbox{, $x \notin [0, 2]$}.\end{array} \right. \]
+		\[ F(x) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $x<0$};\\
+			\frac{x^2}{4} & \mbox{, $x \in [0, 2]$};\\
+			1 & \mbox{, $x>2$}.\end{array} \right. \]
+		\subsection*{2}
+		$f(y) = \frac{dS(y)}{Sdy} = \frac{dS(y)}{dy} = \frac{x(y)dy}{dy} = x(y) = 2y$\\
+		\\
+		$F(y) = \int_{-\infty}^{y} f(t) dt = \int_{0}^{1} 2t dt = y^2$\\
+		\\
+		\[ f(y) = \left\{ \begin{array}{ll}
+			2y & \mbox{, $y \in [0, 1]$};\\
+			0 & \mbox{, $y \notin [0, 1]$}.\end{array} \right. \]
+		\[ F(y) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $y<0$};\\
+			y^2 & \mbox{, $y \in [0, 1]$};\\
+			1 & \mbox{, $y>1$}.\end{array} \right. \]
+	\end{large}
+	\section*{задание 1.5}
+	\begin{large}
+		\subsection*{1}
+		пусть случайная величина $X$ - абсцисса точки попадания\\
+		обозначим:\\
+		$l(x)$ - длина дуги окружности, для которой $X<x$;\\
+		$\theta(x)$ - угол от оси абсцисс до края дуги;\\
+		тогда $x = Rcos\theta \Rightarrow \theta(x) = arccos\frac{x}{R}$\\
+		\\
+		$F(x) = \frac{l(x)}{2\pi R} = \frac{2R(\pi - \theta(x))}{2\pi R} = 1-\frac{\theta(x)}{\pi} = 1-\frac{1}{\pi}arccos\frac{x}{R}$\\
+		\\
+		$f(x) = \frac{dF(x)}{dx} = \frac{1}{\pi \sqrt{R^2-x^2}}$\\
+		\\
+		\[ f(x) = \left\{ \begin{array}{ll}
+			\frac{1}{\pi \sqrt{R^2-x^2}} & \mbox{, $x \in (-R, R)$};\\
+			0 & \mbox{, $x \notin (-R, R)$}.\end{array} \right. \]
+		\subsection*{2}
+		пусть случайная величина $X$ - длина хорды;\\
+		для конкретного значения $0<x<2R$ существуют 2 хорды длины $x$, симметричные относительно оси абсцисс;\\
+		обозначим точками $A$ и $B$ правые концы этих хорд над и под осью абсцисс соответственно;\\
+		обозначим:\\
+		$l(x)$ - длина дуги $AB$;\\
+		$\theta(x)$ - угол от оси абсцисс до точки $A$;\\
+		тогда:\\
+		\\
+		$x(\theta)=2Rsin\frac{\pi - \theta}{2} \Rightarrow \theta(x) = \pi - 2arcsin\frac{x}{2R}$\\
+		\\
+		$l(\theta)=2R(\pi - \theta) \Rightarrow l(x)=4Rarcsin\frac{x}{2R}$\\
+		\\
+		$F(x) = \frac{l(x)}{2\pi R} = \frac{4Rarcsin\frac{x}{2R}}{2\pi R}=\frac{2}{\pi}arcsin\frac{x}{2R}$\\
+		\\
+		$f(x) = \frac{dF(x)}{dx}=\frac{2}{\pi \sqrt{4R^2-x^2}}$\\
+		\\
+		\[ f(x) = \left\{ \begin{array}{ll}
+			\frac{2}{\pi \sqrt{4R^2-x^2}} & \mbox{, $x \in (0, 2R)$};\\
+			0 & \mbox{, $x \notin (0, 2R)$}.\end{array} \right. \]
+	\end{large}
+	\section*{задание 1.9}
+	\begin{large}
+	$P(|X|<a)>2/3 \Rightarrow P(-a<X<a)>2/3$\\
+	\\
+	обозначим медиану как $m$\\
+	тогда $F(m) = 0.5$\\
+	\\
+	от противного:\\
+	пусть $m>a$\\
+	тогда $F(m)=P(X<m)>P(-a<X<a)>2/3$ (так как мера аддитивна), но тогда $F(m) \ne 0.5$ - противоречие;\\
+	пусть теперь $m<-a$\\
+	тогда $F(m)=P(X<m)<P(X \notin (-a, a))<1/3$ (так как мера аддитивна), но тогда $F(m) \ne 0.5$ - противоречие\\
+	\section*{задание 1.10}
+	так как $F(x)$ - функция распределения,\\
+	то $0 \le F(x) \le 1$\\
+	\\
+	тогда:\\
+	\\
+	$\int_{-\infty}^{+\infty} F(x) dF(x) =\\
+	\\
+	\int_{0}^{1} F(x) dF(x) = F(x)^{2}/2|_0^{1} = 1/2 - 0 = 1/2$\\
+	\\
+	$\int_{-\infty}^{+\infty} F(x)^2 dF(x) =\\
+	\\
+	\int_{0}^{1} F(x)^2 dF(x) = F(x)^{3}/3|_0^{1} = 1/3 - 0 = 1/3$
+\end{large}
+\end{document}
