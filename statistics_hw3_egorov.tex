@@ -76,7 +76,6 @@
 		получим $F_Y(y)=F_X(\sqrt{y})=-\frac{(\sqrt{y})^2}{2}+2\sqrt{y}-1=-\frac{y}{2}+2\sqrt{y}-1$ - абсолютно непрерывна на $[1,4]$,\\
 		\\
 		поэтому имеет плотность $p_Y(y)=\frac{dF_Y(y)}{dy}=\frac{d(-\frac{y}{2}+2\sqrt{y}-1)}{dy}=\frac{1}{\sqrt{y}}-\frac{1}{2}$ на $[1,4]$;\\
-		\\
 		\[ p(y) = \left\{ \begin{array}{ll}
 			0 & \mbox{, $y<0$};\\
 			\\
@@ -85,5 +84,119 @@
 			\frac{1}{\sqrt{y}}-\frac{1}{2} & \mbox{, $1 \le y < 4$};\\
 			\\
 			1 & \mbox{, $y \ge 4$}.\end{array} \right. \]
+	\end{large}
+	\section*{задание 1.3}
+	\begin{large}
+		\subsection*{1}
+		$X \in [0,1] \Rightarrow Y=-logX \in [0,+\infty)$;\\
+		\\
+		$F(y)=P(Y<y)=P(-logX<y)=P(log\frac{1}{X}<y)=\\
+		\\
+		P(\frac{1}{X}<e^y)=P(X>e^{-y})=1-e^{-y}$;\\
+		\\
+		$p(y)=\frac{dF(y)}{dy}=\frac{d(1-e^{-y})}{dy}=e^{-y}$\\
+		\[ p(y) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $y<0$};\\
+			\\
+			e^{-y} & \mbox{, $y \ge 0$}.\end{array} \right. \]
+		\subsection*{2}
+		$X \in [0,1] \Rightarrow Y=2X+1 \in [1,3]$;\\
+		\\
+		$F(y)=P(Y<y)=P(2X+1<y)=P(2X<y-1)=\\
+		\\
+		P(X<\frac{y-1}{2})=\frac{y-1}{2}$;\\
+		\\
+		$p(y)=\frac{dF(y)}{dy}=\frac{d\frac{y-1}{2}}{dy}=\frac{1}{2}$\\
+		\[ p(y) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $y \notin [1,3]$};\\
+			\\
+			\frac{1}{2} & \mbox{, $y \in [1,3]$}.\end{array} \right. \]
+		\subsection*{3}
+		$X \in [0,1] \Rightarrow Y=X-\frac{1}{X} \in (-\infty,0])$;\\
+		\\
+		$F(y)=P(Y<y)=P(X-\frac{1}{X}<y)$;\\
+		\\
+		$
+		X-\frac{1}{X}<y\\\\
+		X^2-1<Xy\\\\
+		X^2-yX-1<0\\\\
+		(X-\frac{y}{2})^2-\frac{y^2}{4}-1<0\\\\
+		(X-\frac{y}{2})^2<1+\frac{y^2}{4}\\\\
+		|X-\frac{y}{2}|<\sqrt{1+\frac{y^2}{4}}\\\\
+		\left. \begin{array}{rr}
+			X\in [0,1]\\
+			Y\in (-\infty,0]\end{array}\right\} \Rightarrow X-\frac{y}{2}\ge0\\\\
+		X-\frac{y}{2}<\sqrt{1+\frac{y^2}{4}}\\\\
+		X<\frac{y}{2}+\sqrt{1+\frac{y^2}{4}}\\\\
+		F(y)=P(X<\frac{y}{2}+\sqrt{1+\frac{y^2}{4}})=F_X(\frac{y}{2}+\sqrt{1+\frac{y^2}{4}})=\frac{y}{2}+\sqrt{1+\frac{y^2}{4}}\\\\
+		p(y)=\frac{dF(y)}{dy}=\frac{d(\frac{y}{2}+\sqrt{1+\frac{y^2}{4}})}{dy}=\frac{1}{2}+\frac{1}{2\sqrt{1+\frac{y^2}{4}}} \cdot \frac{1}{4} \cdot 2y=\frac{1}{2}+\frac{y}{4\sqrt{1+\frac{y^2}{4}}}\\\\\\
+		p(y) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $y>0$};\\
+			\\
+			\frac{1}{2}+\frac{y}{4\sqrt{1+\frac{y^2}{4}}} & \mbox{, $y \le 0$}.\end{array} \right.
+		$
+		\subsection*{4}
+		$X \in [0,1] \Rightarrow Y=-log(1-X) \in [0,+\infty)$;\\\\
+		$F(y)=P(Y<y)=P(-log(1-X)<y)$;\\\\
+		$
+		-log(1-X)<y\\\\
+		log\frac{1}{1-X}<y\\\\
+		\frac{1}{1-X}<e^y\\\\
+		1-X>e^{-y}\\\\
+		-X>e^{-y}-1\\\\
+		X<1-e^{-y}\\\\
+		p(y)=\frac{dF(y)}{dy}=\frac{d(1-e^{-y})}{dy}=e^{-y}\\\\\\
+		p(y) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $y<0$};\\
+			\\
+			e^{-y} & \mbox{, $y \ge 0$}.\end{array} \right.
+		$
+		\subsection*{5}
+		$
+		X \in [0,1] \Rightarrow Y=X^2 \in [0,1];\\\\
+		F(y)=P(Y<y)=P(X^2<y)=P(X<\sqrt{y})=F_X(\sqrt{y})=\sqrt{y};\\\\
+		p(y)=\frac{dF(y)}{dy}=\frac{d(\sqrt{y})}{dy}=\frac{1}{2\sqrt{y}}\\\\\\
+		p(y) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $y \notin [0,1]$};\\
+			\\
+			\frac{1}{2\sqrt{y}} & \mbox{, $y \in [0,1]$}.\end{array} \right.
+		$
+		\subsection*{6}
+		$
+		X \in [0,1] \Rightarrow Y=e^{X-1}\in [e^{-1},1];\\\\
+		F(y)=P(Y<y)=P(e^{X-1}<y)=P(X-1<logy)=\\\\
+		P(X<1+logy)=F_X(1+logy)=1+logy;\\\\
+		p(y)=\frac{dF(y)}{dy}=\frac{d(1+logy)}{dy}=\frac{1}{y}\\\\\\
+		p(y) = \left\{ \begin{array}{ll}
+			0 & \mbox{, $y \notin [e^{-1},1]$};\\
+			\\
+			\frac{1}{y} & \mbox{, $y \in [e^{-1},1]$}.\end{array} \right.
+		$
+	\section*{задание 1.6}
+	$F(X)\in[0,1]$ по определению;\\\\
+	так как $X\in[0,1]$, а $F(X)$ непрерывна и не убывает, то точная верхняя грань $sup\{t|F(t)=x\}$ достигается в любой точке $x\in[0,1]$, поэтому\\\\
+	$P(F(x)<x)=P(X<sup\{t|F(t)=x\})=\\\\F(sup\{t|F(t)=x\})=x$
+	\section*{задание 1.8}
+	$
+	\frac{X}{|X|}=\left\{ \begin{array}{ll}
+		1 &  \mbox{, $X>0$}\\
+		-1 & \mbox{, $X<0$}\end{array}\right.
+	$\\\\
+	так как $F(X)$ непрерывна в $0$, то $P(X\ge 0)=1-F(0)$;\\\\
+	тогда:\\\\
+	$
+	Y\in\{-1,1\}\\
+	P(Y=-1)=P(X<0)=F(0)\\
+	P(Y=1)=P(X=0)+P(X>0)=P(X\ge0)=1-F(0)\\
+	$
+	\section*{задание 1.9}
+	пусть $X$ - диаметр круга, тогда площадь круга $S(X)=\frac{\pi X^2}{4}$;\\\\
+	выразим диаметр через площадь: $X(S)=2\sqrt{\frac{S}{\pi}}$;\\\\
+	тогда функция распределения площади\\\\ $F_S(s)=P(S<s)=P(X<2\sqrt{\frac{s}{\pi}})=2\sqrt{\frac{s}{\pi}}-a$,\\\\
+	тогда плотность распределения $p_S(s)=\frac{dF_S(s)}{ds}=\frac{d(2\sqrt{\frac{s}{\pi}}-a)}{ds}=\\\\2\cdot \frac{1}{2}\cdot \frac{1}{\sqrt{\frac{s}{\pi}}}\cdot \frac{1}{\pi}=\frac{1}{\pi\sqrt{\frac{s}{\pi}}}=\frac{1}{\sqrt{\frac{\pi^2s}{\pi}}}=\frac{1}{\sqrt{\pi s}}$;\\\\
+	распределение площади для множества $B\subset[\frac{\pi a^2}{4},\frac{\pi b^2}{4}]$:\\\\
+	$P(S\in B)=\frac{1}{\sqrt{\pi}}\int_B \frac{ds}{\sqrt{s}}$
+	\section*{задание 1.10}
+	
 	\end{large}
 \end{document}
