@@ -1,0 +1,31 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Борис Егоров}
+\title{ДЗ4 статистика}
+\begin{document}
+	\maketitle
+	\begin{large}
+	\section*{задание 1.5}
+	обозначим $Y=X^2$;\\\\
+	тогда $F(x,y)=P(X<x,Y<y)=0$ при $y\le0$,\\\\
+	так как $X^2\ge0 \forall X\in (-\infty,+\infty)$;\\\\
+	пусть $y>0$:\\\\
+	$P(Y<y)=P(|X|<\sqrt{y})=P(-\sqrt{y}<X<\sqrt{y})\Rightarrow\\\\
+	F(x,y)=P(X<x\cap-\sqrt{y}<X<\sqrt{y})$,\\\\
+	тогда для $x\le-\sqrt{y}$ получим $F(x,y)=0$,\\\\
+	иначе $F(x,y)=P(-\sqrt{y}<X<min\{\sqrt{y},x\})=\int_{-\sqrt{y}}^{min\{\sqrt{y},x\}}p(t)dt$;\\\\
+	ответ:\\\\
+	\[ F(x,y) = \left\{ \begin{array}{ll}
+		0 & \mbox{, $y\le0$};\\
+		\\
+		0 & \mbox{, $x\le-\sqrt{y}$};\\
+		\\
+		\int_{-\sqrt{y}}^{min\{\sqrt{y},x\}}p(t)dt & \mbox{, $x>\sqrt{y}$}.\end{array} \right. \]
+	\end{large}
+\end{document}

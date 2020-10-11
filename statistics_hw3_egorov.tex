@@ -197,6 +197,55 @@
 	распределение площади для множества $B\subset[\frac{\pi a^2}{4},\frac{\pi b^2}{4}]$:\\\\
 	$P(S\in B)=\frac{1}{\sqrt{\pi}}\int_B \frac{ds}{\sqrt{s}}$
 	\section*{задание 1.10}
-	
+	$
+	X \in [0,4] \Rightarrow X+4 \in [4,8]\\
+	X \in [0,4] \Rightarrow X^2 \in [0,16]
+	$\\\\
+	тогда $Y \in [min\{X+4,X^2\},max\{X+4,X^2\}] \Rightarrow Y \in [0,16]$;\\\\
+	$F(y)=P(Y<y)$ по определению;\\\\
+	события $Y=X^2$ и $Y=X+4$ несовместны по условию задачи, поэтому по формуле полной вероятности\\\\
+	\begin{normalsize}
+	$
+	P(Y<y)=\\\\
+	P(X^2<y|Y=X^2)P(Y=X^2)+P(X+4<y|Y=X+4)P(Y=X+4)=\\\\
+	\frac{1}{4}P(X^2<y|Y=X^2)+\frac{3}{4}P(X+4<y|Y=X+4)
+	$;
+	\end{normalsize}\\\\
+	\textbf{пусть $0<y\le4$:}\\\\
+	$
+	P(X+4<y|Y=X+4)=0 \Rightarrow P(Y<y)=\\\\
+	\frac{1}{4}P(X^2<y|Y=X^2)=\frac{1}{4}P(X<\sqrt{y})=\frac{1}{4}\cdot\frac{\sqrt{y}}{4}=\frac{\sqrt{y}}{16}\\\\
+	p(y)=\frac{\frac{d(\sqrt{y}}{16})}{dy}=\frac{1}{32\sqrt{y}}
+	$\\\\
+	\textbf{пусть $8<y\le16$:}\\\\
+	$
+	P(X+4<y|Y=X+4)=0 \Rightarrow\\\\
+	P(Y<y)=1-P(Y\ge y)=\\\\
+	1-\frac{1}{4}P(X^2\ge y|Y=X^2)=\\\\
+	1-\frac{1}{4}P(X\ge \sqrt{y})=\\\\
+	1-\frac{1}{4}\cdot\frac{4-\sqrt{y}}{4}=\\\\
+	1-\frac{1}{4}+\frac{\sqrt{y}}{16}=\frac{3}{4}+\frac{\sqrt{y}}{16}
+	$;\\\\
+	$
+	p(y)=\frac{d(\frac{3}{4}+\frac{\sqrt{y}}{16})}{dy}=\frac{1}{32\sqrt{y}}
+	$\\\\
+	\textbf{пусть $4<y\le8$:}\\\\
+	$
+	P(Y<y)=\\\\
+	\frac{1}{4}P(X^2<y|Y=X^2)+\frac{3}{4}P(X+4<y|Y=X+4)=\\\\
+	\frac{1}{4}P(X<\sqrt{y})+\frac{3}{4}P(X+4<y)=\\\\
+	\frac{1}{4}P(X<\sqrt{y})+\frac{3}{4}P(X<y-4)=\\\\
+	\frac{\sqrt{y}}{16}+\frac{3}{4}\cdot\frac{y-4}{4}=\frac{\sqrt{y}}{16}+\frac{3y}{16}-\frac{3}{4}
+	$;\\\\
+	$p(y=\frac{d(\frac{\sqrt{y}}{16}+\frac{3y}{16}-\frac{3}{4})}{dy})=\frac{1}{32\sqrt{y}}+\frac{3}{16}$;\\\\
+	\textbf{ответ:}\\\\
+	$P(Y<4)=F(4)=\frac{\sqrt{4}}{16}=\frac{1}{8}$,\\\\
+	плотность распределения $Y$\\\\
+	$p(y)=\left\{ \begin{array}{ll}
+		\frac{1}{32\sqrt{y}} & \mbox{, $y\in(0,4]\cup(8,16]$};\\
+		\\
+		\frac{1}{32\sqrt{y}}+\frac{3}{16} & \mbox{, $y\in(4,8]$};\\
+		\\
+		0 & \mbox{, $y\notin(0,16]$}.\end{array} \right.$
 	\end{large}
 \end{document}
