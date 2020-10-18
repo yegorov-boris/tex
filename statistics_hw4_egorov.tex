@@ -11,6 +11,37 @@
 \begin{document}
 	\maketitle
 	\begin{large}
+	\section*{задание 1.3}
+	обозначим расстояние как X, абсциссы точек попадания U и V;\\\\
+	$F(x)=P(X<x)=P(|U-V|<x)=P(U-V<x|U>V)+P(V-U<x|U<V)$;\\\\
+	так как событие $U>V$ станет событием $U<V$, если поменять местами точки U и V, то\\\\
+	$F(x)=2P(U-V<x|U>V)$;\\\\
+	так как U и V распределены равномерно и непрерывно на [0,a], то\\\\
+	$
+	P(U-V<x|U>V)=\\\\
+	\int_{0}^{a}P(V\in(t-x,t))dP(U)=\\\\
+	\int_{0}^{a}P(V\in(t-x,t))\frac{dt}{a}=\\\\
+	\frac{1}{a}(\int_{0}^{x}\frac{t}{a}dt+\int_{x}^{a}\frac{x}{a}dt)=\\\\
+	\frac{1}{a^2}(\int_{0}^{x}tdt+x\int_{x}^{a}dt)=\\\\
+	\frac{1}{a^2}(\frac{x^2}{2}+x(a-x))=\\\\
+	\frac{1}{a^2}(\frac{x^2}{2}+xa-x^2)=\frac{1}{a^2}(xa-\frac{x^2}{2})=\frac{x}{a}-\frac{x^2}{2a^2}
+	$\\\\
+	\[ F(x) = \left\{ \begin{array}{ll}
+		0 & \mbox{, $x\le0$};\\
+		\\
+		\frac{2x}{a}-\frac{x^2}{a^2} & \mbox{, $0<x\le a$};\\
+		\\
+		1 & \mbox{, $x>a$}.\end{array} \right. \]
+	\section*{задание 1.4}
+	$
+	P(X<t)=1-e^{-\alpha t};\\\\
+	P(Y<t)=1-e^{-\beta t};\\\\
+	p_Y(t)=\beta e^{-\beta t};\\\\
+	P(X<Y)=\int_{0}^{+\infty}P(X<t|Y=t)p_Y(t)dt=\\\\
+	\int_{0}^{+\infty}(1-e^{-\alpha t})\beta e^{-\beta t}dt=\\\\
+	\beta(\int_{0}^{+\infty}e^{-\beta t}dt-\int_{0}^{+\infty}e^{-(\alpha+\beta) t}dt)=\\\\
+	\beta(\frac{1}{\beta}-\frac{1}{\alpha+\beta})=1-\frac{\beta}{\alpha+\beta}
+	$
 	\section*{задание 1.5}
 	обозначим $Y=X^2$;\\\\
 	тогда $F(x,y)=P(X<x,Y<y)=0$ при $y\le0$,\\\\
@@ -27,5 +58,108 @@
 		0 & \mbox{, $x\le-\sqrt{y}$};\\
 		\\
 		\int_{-\sqrt{y}}^{min\{\sqrt{y},x\}}p(t)dt & \mbox{, $x>\sqrt{y}$}.\end{array} \right. \]
+	\section*{задание 1.6}
+	$
+	I=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}\frac{dxdy}{1+x^2+y^2+x^2y^2};\\\\
+	cI=1\Rightarrow c=\frac{1}{I};\\\\
+	1+x^2+y^2+x^2y^2=(1+x^2)(1+y^2);\\\\
+	\int_{-\infty}^{+\infty}\frac{dy}{(1+x^2)(1+y^2)}=\frac{1}{1+x^2}\int_{-\infty}^{+\infty}\frac{dy}{1+y^2}=\\\\
+	\frac{arctg(+infty)-arctg(-\infty)}{1+x^2}=\frac{\frac{\pi}{2}-(-\frac{\pi}{2})}{1+x^2}=\frac{\pi}{1+x^2};\\\\
+	I=\pi\int_{-\infty}^{+\infty}\frac{dx}{1+x^2}=\pi^2;\\\\
+	c=\frac{1}{\pi^2};\\\\
+	p(x,y)=\frac{1}{\pi^2(1+x^2)(1+y^2)}\\\\
+	p(x)=\int_{-\infty}^{+\infty}p(x,y)dy=\frac{1}{\pi^2}\cdot\frac{\pi}{1+x^2}=\frac{1}{\pi(1+x^2)};\\\\
+	p(y)=\int_{-\infty}^{+\infty}p(x,y)dx=\frac{1}{\pi^2}\cdot\frac{\pi}{1+y^2}=\frac{1}{\pi(1+y^2)};
+	$\\\\
+	X и Y независимы, так как\\\\ $p(x)p(y)=\frac{1}{\pi(1+x^2)}\cdot\frac{1}{\pi(1+y^2)}=\frac{1}{\pi^2(1+x^2)(1+y^2)}=p(x,y)$
+	\section*{задание 2.2}
+	пусть X и Y дискретны, $x>0$, $y>0$:\\
+	так как $X^2$ и $Y^2$ независимы, то\\\\
+	$
+	P(X^2=x^2|Y^2=y^2)=P(X^2=x^2)\\\\
+	P(|X|=x||Y|=y)=P(|X|=x)\\\\
+	P(X=x|Y=y)+P(X=x|Y=-y)+P(X=-x|Y=y)+\\P(X=-x|Y=-y)=P(X=x)+P(X=-x)
+	$,\\\\
+	при этом возможны равенства\\
+	\[
+	\left\{ \begin{array}{ll}
+		P(X=x|Y=y)+P(X=x|Y=-y)=P(X=x)\\
+		P(X=-x|Y=y)+P(X=-x|Y=-y)=P(X=-x)\\
+	\end{array} \right.
+	\]\\
+	при этом возможно также\\
+	\[
+	\left\{ \begin{array}{ll}
+		P(X=x|Y=y)\ne0\\
+		P(X=x|Y=-y)\ne0\\
+		P(X=x)\ne0
+	\end{array} \right.
+	\]\\
+	но тогда $P(X=x|Y=y)\ne P(X=x)$, значит X и Y зависимы
+	\section*{задание 2.3}
+	площадь круга радиуса 1: $S=\pi$;\\\\
+	рассмотрим квадрат, вписанный в круг $x^2+y^2<1$:\\\\
+	диагональ этого квадрата равна диаметру круга $d=2$,\\\\
+	сторона квадрата $a=\frac{d}{\sqrt{2}}=\sqrt{2}$,\\\\
+	тогда площадь квадрата $a^2=2$;\\\\
+	но $|X|<\frac{1}{\sqrt{2}}\cap |Y|<\frac{1}{\sqrt{2}}=\\\\
+	-\frac{\sqrt{2}}{2}<X<\frac{\sqrt{2}}{2}\cap-\frac{\sqrt{2}}{2}<X<\frac{\sqrt{2}}{2}$ - получили квадрат,\\\\
+	вписанный в круг, тогда $P(|X|<\frac{1}{\sqrt{2}},|Y|<\frac{1}{\sqrt{2}})=\frac{a^2}{S}=\frac{2}{\pi}$;\\\\
+	проверим независимость:\\\\
+	$
+	P(Y>\frac{1}{\sqrt{2}})=\frac{S-a^2}{4}=\frac{\pi-2}{4}\\\
+	P(Y>\frac{1}{\sqrt{2}}|X>Y>\frac{1}{\sqrt{2}})=0\ne P(Y>\frac{1}{\sqrt{2}})
+	$\\\\
+	X и Y зависимы
+	\section*{задание 2.4}
+	так как X и Y независимы и одинаково распределены, события $X=0$ и $X=1$ несовместны, события $Y=0$ и $Y=1$ несовместны, то:\\\\
+	$
+	P(Z=0)=P(X=0)P(Y=0)+P(X=1)P(Y=1)=(1-p)^2+p^2\\\\
+	P(Z=1)=P(X=0)P(Y=1)+P(X=1)P(Y=0)=2p(1-p)
+	$;\\\\
+	если Z и X независимы, то:\\
+	\[
+		\left\{ \begin{array}{ll}
+		P(Z=0|X=0)=P(Z=0|X=1)=(1-p)^2+p^2\\
+		P(Z=1|X=0)=P(Z=1|X=1)=2p(1-p)
+		\end{array} \right.
+	\]\\
+	\[
+		\left\{ \begin{array}{ll}
+			P(Y=0)=P(Y=1)=(1-p)^2+p^2\\
+			P(Y=1)=P(Y=0)=2p(1-p)
+		\end{array} \right.
+	\]\\
+	\[
+	\left\{ \begin{array}{ll}
+		1-p=p=(1-p)^2+p^2\\
+		p=1-p=2p(1-p)
+	\end{array} \right.
+	\]\\
+	$p=1-p\Rightarrow p=0.5$;\\
+	проверим $(1-p)^2+p^2$ и $2p(1-p)$:\\\\
+	$
+	(1-0.5)^2+0.5^2=0.25+0.25=0.5\\\\
+	2\cdot 0.5(1-0.5)=2\cdot 0.5\cdot 0.5=0.5
+	$;\\\\
+	ответ: 0.5
+	\section*{задание 2.6}
+	так как плотность вероятности стандартного нормального распределения симметрична относительно нуля, то\\\\
+	для $x>0$ получим $P(|X|<x|X\le0)=P(|X|<x|X>0)$;\\\\
+	кроме того $P(X<0)=P(X\ge0)=0.5$;\\\\
+	тогда $P(Y=0)=P(Y=1)=0.5$;\\\\
+	для борелевских множеств $B_1$ и $B_2$ найдем $P(|X|\in B_1\cap Y\in B_2)$:\\\\
+	\textbf{пусть $0\notin B_2, 1\notin B_2$:}\\\\
+	тогда $P(Y\in B_2)=0\Rightarrow\\\\
+	P(|X|\in B_1\cap Y\in B_2)=P(|X|\in B_1)P(Y\in B_2)=0$;\\\\
+	\textbf{пусть $0\in B_2, 1\in B_2$:}\\\\
+	тогда $P(Y\in B_2)=1\Rightarrow\\\\
+	P(|X|\in B_1\cap Y\in B_2)=P(|X|\in B_1)P(Y\in B_2)=1$;\\\\
+	\textbf{пусть $0\in B_2, 1\notin B_2$:}\\\\
+	тогда $P(|X|\in B_1\cap Y\in B_2)=P(|X|\in B_1\cap Y=0)=\\\\
+	P(|X|\in B_1\cap X\le 0)=0.5P(|X|\in B_1)=P(|X|\in B_1)P(Y\in B_2)$;\\\\
+	\textbf{пусть $0\notin B_2, 1\in B_2$:}\\\\
+	тогда $P(|X|\in B_1\cap Y\in B_2)=P(|X|\in B_1\cap Y=1)=\\\\
+	P(|X|\in B_1\cap X>0)=0.5P(|X|\in B_1)=P(|X|\in B_1)P(Y\in B_2)$.
 	\end{large}
 \end{document}

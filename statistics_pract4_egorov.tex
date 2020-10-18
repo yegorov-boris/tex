@@ -1,0 +1,26 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Борис Егоров}
+\title{статистика практика 4, дополнительные задачи}
+\begin{document}
+	\maketitle
+	\begin{large}
+	\section*{2}
+	обозначим $z=x+y$, тогда $F_z(t)=P(x+y<t)$;\\\\
+	так как x дискретна, то по формуле полной вероятности получим:\\\\
+	$
+	P(x+y<t)=\sum_{i}P(x+y<t|x=a_i)P(x=a_i)=\\\\
+	\sum_{i}P(a_i+y<t)p_i=\sum_{i}p_iP(y<t-a_i)=\sum_{i}p_iF_y(t-a_i)
+	$;\\\\
+	тогда\\\\
+	$
+	g(t)=\frac{dF_z(t)}{dt}=\frac{d\sum_{i}p_iF_y(t-a_i)}{dt}=\sum_{i}p_i\frac{dF_y(t-a_i)}{dt}=\sum_{i}p_if(t-a_i)
+	$
+	\end{large}
+\end{document}
