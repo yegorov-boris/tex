@@ -1,0 +1,31 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{delarray}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Борис Егоров}
+\title{ДЗ6 задача 1 алгоритмы}
+\begin{document}
+	\maketitle
+	\begin{large}
+	обозначим события: $A$ - выпадение $n$ орлов, $B_0$ - выбрана неправильная монета, $B_1$ - выбрана правильная монета;\\
+	нужно найти $n$, начиная с которого $P(B_0|A)\ge0.95$;\\
+	очевидно, что $B_0$ и $B_1$ несовместны, поэтому можно применить формулу полной вероятности:\\\\
+	$
+	P(B_0|A)=\frac{P(B_0A)}{P(A)}=\frac{P(A|B_0)P(B_0)}{P(A|B_0)P(B_0)+P(A|B_1)P(B_1)}=\\\\
+	\frac{0.9^n\cdot0.5}{0.9^n\cdot0.5+0.5^n\cdot0.5}=
+	\frac{0.9^n}{0.9^n+0.5^n};\\\\
+	\frac{0.9^n}{0.9^n+0.5^n}\ge0.95\\\\
+	0.9^n\ge0.95(0.9^n+0.5^n)\\\\
+	0.9^n\cdot0.05\ge0.5^n\cdot0.95\\\\
+	0.9^n\ge0.5^n\cdot19\\\\
+	1.8^n\ge19
+	$\\\\
+	найдем $n$ подбором: $1.8^6>19$ и $1.8^5<19$;\\
+	ответ: начиная с 6.
+	\end{large}
+\end{document}
