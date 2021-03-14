@@ -1,0 +1,205 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{amsfonts}
+\usepackage{newpxmath,newpxtext}
+\usepackage[russian]{babel}
+\usepackage[T1]{fontenc}
+\author{Борис Егоров}
+\title{ДЗ2 статистика}
+
+\makeatletter
+\newcommand{\oset}[3][0ex]{%
+	\mathrel{\mathop{#3}\limits^{
+			\vbox to#1{\kern-2\ex@
+				\hbox{$\scriptstyle#2$}\vss}}}}
+\makeatother
+
+\begin{document}
+	\maketitle
+	\begin{large}
+	\section*{1}
+	проверка несмещенности оценок:\\\\
+	$EX_1=0P(X_1=0)+1P(X_1=1)=p$;\\
+	так как $X_1$ и $X_2$ независимы, то $EX_1X_2=EX_1EX_2=p*p=p^2$;\\
+	$EX_1(1-X_2)=E(X_1-X_1X_2)=EX_1-EX_1X_2=p-p^2=p(1-p)$;\\\\
+	проверка состоятельности:\\
+	оценки $X_1,X_1X_2,X_1(1-X_2)$ не зависят от n, поэтому не становятся точнее с ростом n;\\
+	$X_1=0\ne p,X_1=1\ne p$ - оценка $X_1$ не состоятельна;\\
+	$X_1X_2=0\ne p^2,X_1X_2=1\ne p^2$ - оценка $X_1X_2$ не состоятельна;\\
+	$X_1(1-X_2)=0\ne p(1-p),X_1(1-X_2)=1\ne p(1-p)$ - оценка $X_1(1-X_2)$ не состоятельна.
+	\section*{2}
+	известно, что эмпирическая функция распределения $F_n(y)$ является несмещенной и состоятельной оценкой функции распределения $F(y)$;\\
+	плотность вероятности случайной величины $Y$, равномерно распределенной на $[0,a]$: $f(y)=\frac{1}{a}$ при $y\in[0,a]$;\\
+	$F(1)=P(Y<1)=\frac{1}{a}$;\\
+	пусть $\theta(a)=f(y)$, тогда $F_n(1)$ является несмещенной и состоятельной оценкой плотности вероятности на $[0,a]$.
+	\section*{3}
+	$
+	EX_1=\int_{\beta}^{+\infty}y\frac{e^{-\frac{y-\beta}{\alpha}}}{\alpha}dy=
+	\int_{\beta}^{+\infty}y\frac{e^{\frac{\beta-y}{\alpha}}}{\alpha}dy;
+	$\\\\
+	сделаем замену переменной:\\\\
+	$
+	t=\frac{\beta-y}{\alpha};\\\\
+	y=\beta-\alpha t;\\\\
+	dy=-\alpha dt;
+	$\\\\
+	получим\\\\
+	$
+	EX_1=\int_{0}^{-\infty}(\beta-\alpha t)\frac{e^t}{\alpha}\cdot-\alpha dt=\\\\
+	-\int_{0}^{-\infty}(\beta-\alpha t)e^tdt=\\\\
+	-\beta\int_{0}^{-\infty}e^tdt+\alpha\int_{0}^{-\infty}te^tdt=\\\\
+	\beta\int_{-\infty}^{0}e^tdt-\alpha\int_{-\infty}^{0}te^tdt;\\\\
+	$
+	вычислим первое слагаемое: $\int_{-\infty}^{0}e^tdt=e^t|_{-\infty}^0=1-0=1$;\\\\
+	вычислим второе слагаемое интегрированием по частям:\\\\
+	$
+	u=t;\\
+	du=dt;\\
+	dv=e^tdt;\\
+	v=e^t;\\\\
+	\int_{-\infty}^{0}te^tdt=te^t|_{-\infty}^0-\int_{-\infty}^{0}e^tdt=0-1=-1;\\\\
+	$
+	получим $EX_1=\alpha+\beta$;\\\\
+	найдем дисперсию (используем замену переменной из вычисления $EX_1$):\\\\
+	$
+	DX_1=\int_{-\infty}^{0}(\beta-\alpha t-\alpha-\beta)^2e^tdt\\\\
+	\int_{-\infty}^{0}(-\alpha t-\alpha)^2e^tdt=\\\\
+	\alpha^2\int_{-\infty}^{0}(t+1)^2e^tdt=\\\\
+	\alpha^2\int_{-\infty}^{0}(t^2+2t+1)e^tdt=\\\\
+	\alpha^2(\int_{-\infty}^{0}t^2e^tdt+2\int_{-\infty}^{0}te^tdt+\int_{-\infty}^{0}e^tdt);\\\\
+	$
+	второе и третье слагаемое посчитаны при вычислении $EX_1$;\\
+	найдем первое слагаемое интегрированием по частям:\\\\
+	$
+	u=t^2;\\
+	du=2tdt;\\
+	dv=e^tdt;\\
+	v=e^t;\\\\
+	\int_{-\infty}^{0}t^2e^tdt=t^2e^tdt|_{-\infty}^0-2\int_{-\infty}^{0}te^tdt=2;\\\\
+	$
+	получим $DX_1=\alpha^2(2-2+1)=\alpha^2$;\\\\
+	найдем оценки:\\\\
+	$
+	\left.
+	\begin{array}{l}
+	\oset[-.3ex]{\textasciicircum}{\alpha}+\oset[-.3ex]{\textasciicircum}{\beta}=
+	\oset[-.3ex]{-}{X}\\
+	\oset[-.3ex]{\textasciicircum}{\alpha}^2=S^2
+	\end{array}
+	\right\}\\\\
+	\oset[-.3ex]{\textasciicircum}{\alpha}=\sqrt{S^2}\\
+	\oset[-.3ex]{\textasciicircum}{\beta}=\oset[-.3ex]{-}{X}-\sqrt{S^2}
+	$
+	\section*{4}
+	$
+	f(\vec{X},\mu)=\prod_{i=1}^{n}\frac{e^{-|X_i-\mu|}}{2};\\\\
+	L(\vec{X},\mu)=ln(f(\vec{X},\mu))=\\\\
+	\sum_{i=1}^{n}ln\frac{e^{-|X_i-\mu|}}{2}=\\\\
+	\sum_{i=1}^{n}(-|X_i-\mu|-ln2)=\\\\
+	-\sum_{i=1}^{n}|X_i-\mu|-nln2;\\\\
+	$
+	значение $L(\vec{X},\mu)$ максимально, когда $\sum_{i=1}^{n}|X_i-\mu|$ минимальна;\\\\
+	найдем минимум $\sum_{i=1}^{n}|X_i-\mu|$:\\\\
+	$\frac{\delta\sum_{i=1}^{n}|X_i-\mu|}{\delta\mu}=\sum_{i=1}^{n}\frac{\delta|X_i-\mu|}{\delta\mu}$;\\\\
+	$\frac{\delta|X_i-\mu|}{\delta\mu}$ равна 1 при $\mu>X_i$ и -1 при $\mu\le X_i$;\\\\
+	обозначим $x_1,...,x_n$ реализацию выборки $X_1,...,X_n$;\\\\
+	отсортируем $x_1,...,x_n$ по возрастанию и обозначим отсортированные значения $y_1,...,y_n$;\\\\
+	пусть n нечетно $\bf (n=2k-1)$,
+	тогда при $\mu<y_k$ получим $\sum_{i=1}^{n}\frac{\delta|X_i-\mu|}{\delta\mu}<0$, так как в этой сумме будет больше слагаемых, равных -1, чем слагаемых, равных 1;\\\\
+	аналогично при $\mu>y_k$ получим $\sum_{i=1}^{n}\frac{\delta|X_i-\mu|}{\delta\mu}>0$,\\\\
+	поэтому $\mu=y_k$ (медиана выборки) будет точкой минимума $\sum_{i=1}^{n}|X_i-\mu|$ и, соответственно, точкой максимума $L(\vec{X},\mu)$;\\\\
+	оценка $\oset[-.3ex]{\textasciicircum}{\mu}=y_k$;\\\\\\
+	пусть n четно $\bf (n=2k)$, тогда при $y_k<\mu\le y_{k+1}$ получим k слагаемых 1 и k слагаемых -1 в сумме\\\\
+	$\sum_{i=1}^{n}\frac{\delta|X_i-\mu|}{\delta\mu}$,\\\\
+	то есть $\sum_{i=1}^{n}\frac{\delta|X_i-\mu|}{\delta\mu}>0$ при $\mu>y_{k+1}$ и\\\\
+	$\sum_{i=1}^{n}\frac{\delta|X_i-\mu|}{\delta\mu}<0$ при $\mu\le y_k$, поэтому $L(\vec{X},\mu)$ будет максимальна при $y_k<\mu\le y_{k+1}$;\\\\
+	оценка $y_k<\oset[-.3ex]{\textasciicircum}{\mu}\le y_{k+1}$.
+	\section*{5}
+	\subsection*{a.}
+	$
+	f(\vec{X},\theta)=\prod_{i=1}^{n}\theta X_{i}^{\theta-1};\\\\
+	L(\vec{X},\theta)=ln(f(\vec{X},\theta))=\\\\
+	\sum_{i=1}^{n}ln(\theta X_{i}^{\theta-1})=\\\\
+	\sum_{i=1}^{n}(ln\theta+(\theta-1)lnX_i)=\\\\
+	nln\theta+(\theta-1)\sum_{i=1}^{n}lnX_i;\\\\
+	\frac{\delta L(\vec{X},\theta)}{\delta\theta}=\frac{n}{\theta}+\sum_{i=1}^{n}lnX_i;\\\\
+	\frac{n}{\theta}+\sum_{i=1}^{n}lnX_i=0\\\\
+	\theta=-\frac{n}{\sum_{i=1}^{n}lnX_i};\\\\
+	\frac{\delta^2 L(\vec{X},\theta)}{\delta\theta^2}=-\frac{n}{\theta^2};\\\\
+	$
+	так как $\theta>0$ и $n\ge1$, то $-\frac{n}{\theta^2}<0$, поэтому $\theta=-\frac{n}{\sum_{i=1}^{n}lnX_i}$ - точка локального максимума функции $L(\vec{X},\theta)$;\\\\
+	тогда оценка
+	$\oset[-.3ex]{\textasciicircum}{\theta}=-\frac{n}{\sum_{i=1}^{n}lnX_i}$
+	\subsection*{b.}
+	$
+	f_{\theta}(X_i)=\frac{2I_{[0,\theta]}(X_i)}{\theta^2};\\\\
+	f(\vec{X},\theta)=\prod_{i=1}^{n}f_{\theta}(X_i)=\prod_{i=1}^{n}\frac{2I_{[0,\theta]}(X_i)}{\theta^2};\\\\
+	L(\vec{X},\theta)=ln(f(\vec{X},\theta))=\\\\
+	\sum_{i=1}^{n}(ln2-2ln\theta+lnI_{[0,\theta]}(X_i))=\\\\
+	nln2-2nln\theta+\sum_{i=1}^{n}lnI_{[0,\theta]}(X_i);\\\\
+	I_{[0,\theta]}(X_i)\in\{0,1\};\\\\
+	max(lnI_{[0,\theta]}(X_i))=ln1=0;\\\\
+	$
+	максимум суммы $\sum_{i=1}^{n}lnI_{[0,\theta]}(X_i)$ будет достигнут при\\\\ $I_{[0,\theta]}(X_1)=1,...,I_{[0,\theta]}(X_n)=1$, то есть при\\\\
+	$X_1\in[0,\theta],...,X_n\in[0,\theta]$ - это условие выполняется при\\\\
+	$\theta\ge max(X_1,...,X_n)$;\\\\
+	$nln2$ не зависит от $\theta$;\\\\
+	рассмотрим поведение слагаемого $-nln\theta$:\\\\
+	$(-nln\theta)^{'}=-\frac{n}{\theta}<0$, так как $\theta>0$ и $n\ge1$,\\\\
+	значит $-nln\theta$ убывает с ростом $\theta$;\\\\
+	тогда оценка $\oset[-.3ex]{\textasciicircum}{\theta}=min(\theta\ge max(X_1,...,X_n))=max(X_1,...,X_n)$.
+	\subsection*{c.}
+	$
+	f(\vec{X},\theta)=\prod_{i=1}^{n}\frac{\theta e^{-\frac{\theta^2}{X_i}}}{\sqrt{2\pi X_i^3}};\\\\
+	L(\vec{X},\theta)=ln(f(\vec{X},\theta))=\\\\
+	ln(\prod_{i=1}^{n}\frac{\theta e^{-\frac{\theta^2}{X_i}}}{\sqrt{2\pi X_i^3}})=\\\\
+	\sum_{i=1}^{n}ln(\frac{\theta e^{-\frac{\theta^2}{X_i}}}{\sqrt{2\pi X_i^3}})=\\\\
+	\sum_{i=1}^{n}(ln\theta-\frac{\theta^2}{2X_i}-ln\sqrt{2\pi X_i^3})=\\\\
+	\sum_{i=1}^{n}(ln\theta-\frac{\theta^2}{2X_i}-\frac{1}{2}ln2\pi-\frac{3}{2}lnX_i)=\\\\
+	nln\theta-\frac{\theta^2}{2}\sum_{i=1}^{n}\frac{1}{X_i}-\frac{n}{2}ln2\pi-\frac{3}{2}\sum_{i=1}^{n}lnX_i;\\\\
+	\frac{\delta L(\vec{X},\theta)}{\delta\theta}=\frac{n}{\theta}-\theta\sum_{i=1}^{n}\frac{1}{X_i};\\\\
+	\frac{n}{\theta}-\theta\sum_{i=1}^{n}\frac{1}{X_i}=0\\\\
+	\theta^2=\frac{n}{\sum_{i=1}^{n}\frac{1}{X_i}}\\\\
+	\theta=\sqrt{\frac{n}{\sum_{i=1}^{n}\frac{1}{X_i}}};\\\\
+	\frac{\delta^2 L(\vec{X},\theta)}{\delta\theta^2}=-\frac{n}{\theta^2}-\sum_{i=1}^{n}\frac{1}{X_i};\\\\
+	$
+	так как $\theta>0$ и $y>0$, то $-\frac{n}{\theta^2}-\sum_{i=1}^{n}\frac{1}{X_i}<0$, поэтому\\\\
+	$\theta=\sqrt{\frac{n}{\sum_{i=1}^{n}\frac{1}{X_i}}}$ - точка локального максимума функции $L(\vec{X},\theta)$;\\\\
+	тогда оценка $\oset[-.3ex]{\textasciicircum}{\theta}=\sqrt{\frac{n}{\sum_{i=1}^{n}\frac{1}{X_i}}}$
+	\subsection*{d.}
+	$
+	f(\vec{X},\theta)=\prod_{i=1}^{n}\frac{\theta(lnX_i)^{\theta-1}}{X_i};\\\\
+	L(\vec{X},\theta)=ln(f(\vec{X},\theta))=\\\\
+	\sum_{i=1}^{n}ln(\frac{\theta(lnX_i)^{\theta-1}}{X_i})=\\\\
+	\sum_{i=1}^{n}(ln\theta+(\theta-1)ln(lnX_i)-lnX_i)=\\\\
+	nln\theta+(\theta-1)\sum_{i=1}^{n}ln(lnX_i)-\sum_{i=1}^{n}lnX_i;\\\\
+	\frac{\delta L(\vec{X},\theta)}{\delta\theta}=0\\\\
+	\frac{n}{\theta}+\sum_{i=1}^{n}ln(lnX_i)=0\\\\
+	\theta=-\frac{n}{\sum_{i=1}^{n}ln(lnX_i)};\\\\
+	\frac{\delta^2 L(\vec{X},\theta)}{\delta\theta^2}=-\frac{n}{\theta^2};\\\\
+	$
+	так как $\theta>0$ и $n\ge1$, то $\frac{\delta^2 L(\vec{X},\theta)}{\delta\theta^2}<0$, поэтому $f(\vec{X},\theta)$ имеет максимум в точке $\theta=-\frac{n}{\sum_{i=1}^{n}ln(lnX_i)}$;\\\\
+	оценка $\oset[-.3ex]{\textasciicircum}{\theta}=-\frac{n}{\sum_{i=1}^{n}ln(lnX_i)}$
+	\subsection*{e.}
+	$
+	f_{\theta}(X_i)=\frac{e^{-|X_i|}I_{[-\theta,\theta]}(X_i)}{2(1-e^{-\theta})};\\\\
+	f(\vec{X},\theta)=\prod_{i=1}^{n}f_{\theta}(X_i)=
+	\prod_{i=1}^{n}\frac{e^{-|X_i|}I_{[-\theta,\theta]}(X_i)}{2(1-e^{-\theta})};\\\\
+	L(\vec{X},\theta)=ln(f(\vec{X},\theta))=\\\\
+	\sum_{i=1}^{n}(-|X_i|+lnI_{[-\theta,\theta]}(X_i)-ln2-ln(1-e^{-\theta}))=\\\\
+	-\sum_{i=1}^{n}|X_i|+\sum_{i=1}^{n}-nln2-nln(1-e^{-\theta});\\\\
+	$
+	слагаемые $-\sum_{i=1}^{n}|X_i|$ и $-nln2$ не зависят от $\theta$;\\\\
+	максимум суммы $\sum_{i=1}^{n}lnI_{[0,\theta]}(X_i)$ будет достигнут при\\\\ $I_{[0,\theta]}(X_1)=1,...,I_{[0,\theta]}(X_n)=1$, то есть при\\\\
+	$X_1\in[0,\theta],...,X_n\in[0,\theta]$ - это условие выполняется при\\\\
+	$\theta\ge max(X_1,...,X_n)$;\\\\
+	рассмотрим поведение слагаемого $-nln(1-e^{-\theta})$:\\\\
+	$
+	(-nln(1-e^{-\theta}))^{'}=-\frac{n(1-e^{-\theta})^{'}}{1-e^{-\theta}}=
+	-\frac{ne^{-\theta}}{1-e^{-\theta}}<0
+	$, так как $\theta>0$ и $n\ge1$, поэтому $0<e^{-\theta}<1$ и $1-e^{-\theta}<0$,\\\\
+	значит $-nln(1-e^{-\theta})$ убывает с ростом $\theta$;\\\\
+	тогда оценка $\oset[-.3ex]{\textasciicircum}{\theta}=min(\theta\ge max(X_1,...,X_n))=max(X_1,...,X_n)$.
+	\end{large}
+\end{document}
