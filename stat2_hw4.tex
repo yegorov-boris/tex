@@ -137,5 +137,18 @@
 	\lim_{n\rightarrow+\infty}\alpha_2(\delta_n)=1-\lim_{n\rightarrow+\infty}P(2\sqrt{n}(\oset[-.3ex]{-}{X}-3.5)\le 0)=\\\\
 	1-\Phi(0)=0.5
 	$.\\\\
+	\section*{2}
+	выборка $\bm{X}=(X_1,...,X_n)$;\\\\
+	критерий
+	$
+	\delta=\delta(\bm{X})=\left\{ {\begin{array}{l}
+			H_0, X_i\notin \mathbb{N} \\
+			H_1, X_i\in \{0\}\cup\mathbb{N} \\
+	\end{array} } \right.
+	$\\\\\\
+	ошибка первого рода: $\alpha_1(\delta)=P_{H_0}(X_i\in\mathbb{N})=0$, так как нормальное распределение абсолютно непрерывно и вероятность получить 0 или натуральное число равна нулю;\\\\
+	ошибка второго рода: $\alpha_2(\delta)=P_{H_1}(X_i\notin \mathbb{N})=0$, так как случайная величина с распределением Пуассона может быть равна 0, 1, 2, 3, ..., но не дробному числу.
+	\section*{3}
+	
 	\end{large}
 \end{document}
