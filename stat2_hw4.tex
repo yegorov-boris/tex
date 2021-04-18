@@ -20,7 +20,7 @@
 	\maketitle
 	\begin{large}
 	\section*{1}
-	\subsection*{a}
+	\subsection*{пункт a}
 	выборка $\bm{X}=(X_1,...,X_n)$;\\\\
 	критерий
 	$
@@ -58,6 +58,45 @@
 	\alpha_2(\delta_n)=P_{H_1}(\oset[-.3ex]{-}{X}>3.5+1/\sqrt{n})=1-P_{H_1}(\oset[-.3ex]{-}{X}\le 3.5+1/\sqrt{n})\\\\
 	\lim_{n\rightarrow+\infty}\alpha_2(\delta_n)=1-\lim_{n\rightarrow+\infty}P(2\sqrt{n}(\oset[-.3ex]{-}{X}-3.5)\le 2)=\\\\
 	1-\Phi(2)=0.0228
+	$.\\\\
+	\subsection*{пункт b}
+	выборка $\bm{X}=(X_1,...,X_n)$;\\\\
+	критерий
+	$
+	\delta_n=\delta_n(\bm{X})=\left\{ {\begin{array}{l}
+		H_0, \oset[-.3ex]{-}{X}>3.5+1/n \\
+		H_1, \oset[-.3ex]{-}{X}\le 3.5+1/n \\
+		\end{array} } \right.
+	$\\\\\\
+	ошибка первого рода $\alpha_1(\delta_n)$\\
+	ошибка второго рода $\alpha_2(\delta_n)$\\\\
+	пусть $X_i$ распределена с плотностью $f_1(y)$ с параметрами $\lambda=1$ и $b=6$, тогда матожидание $a_1=1/\lambda+b=7$ и дисперсия $\sigma_1^2=1/\lambda^2=1$;\\\\
+	применим ЦПТ:\\\\
+	$\lim_{n\rightarrow+\infty}P(\sqrt{n}\frac{\oset[-.3ex]{-}{X}-a_1}{\sigma_1}<y)=\Phi(y)$\\
+	$\lim_{n\rightarrow+\infty}P(\sqrt{n}(\oset[-.3ex]{-}{X}-7)<y)=\Phi(y)$\\
+	так как экспоненциальное распределение абсолютно непрерывно, то можно перейти к нестрогому неравенству\\\\
+	$\lim_{n\rightarrow+\infty}P(\sqrt{n}(\oset[-.3ex]{-}{X}-7)\le y)=\Phi(y)$;\\\\
+	$
+	\alpha_1(\delta_n)=P_{H_0}(\oset[-.3ex]{-}{X}\le 3.5+1/n)\\\\
+	\oset[-.3ex]{-}{X}\le 3.5+1/n\\\\
+	\sqrt{n}\oset[-.3ex]{-}{X}\le 3.5\sqrt{n}+1/\sqrt{n}\\\\
+	\sqrt{n}(\oset[-.3ex]{-}{X}-7)\le -3.5\sqrt{n}+1/\sqrt{n}\\\\
+	\lim_{n\rightarrow+\infty}\alpha_1(\delta_n)=\lim_{n\rightarrow+\infty}P(\sqrt{n}(\oset[-.3ex]{-}{X}-7)\le -3.5\sqrt{n}+1/\sqrt{n})=\\\\
+	\lim_{n\rightarrow+\infty}\Phi(-3.5\sqrt{n}+1/\sqrt{n})=\Phi(-\infty)=0
+	$;\\\\
+	пусть $X_i$ распределена с плотностью $f_2(y)$ с параметрами $\lambda=2$ и $b=3$, тогда матожидание $a_2=1/\lambda+b=3.5$ и дисперсия $\sigma_2^2=1/\lambda^2=0.25$;\\\\
+	применим ЦПТ:\\\\
+	$\lim_{n\rightarrow+\infty}P(\sqrt{n}\frac{\oset[-.3ex]{-}{X}-a_2}{\sigma_2}<y)=\Phi(y)$\\
+	$\lim_{n\rightarrow+\infty}P(2\sqrt{n}(\oset[-.3ex]{-}{X}-3.5)<y)=\Phi(y)$\\
+	так как экспоненциальное распределение абсолютно непрерывно, то можно перейти к нестрогому неравенству\\\\
+	$\lim_{n\rightarrow+\infty}P(2\sqrt{n}(\oset[-.3ex]{-}{X}-3.5)\le y)=\Phi(y)$;\\\\
+	$
+	\oset[-.3ex]{-}{X}\le 3.5+1/n\\\\
+	\sqrt{n}\oset[-.3ex]{-}{X}\le 3.5\sqrt{n}+1/\sqrt{n}\\\\
+	2\sqrt{n}(\oset[-.3ex]{-}{X}-3.5)\le 2/\sqrt{n}\\\\
+	\alpha_2(\delta_n)=P_{H_1}(\oset[-.3ex]{-}{X}>3.5+1/n)=1-P_{H_1}(\oset[-.3ex]{-}{X}\le 3.5+1/n)\\\\
+	\lim_{n\rightarrow+\infty}\alpha_2(\delta_n)=1-\lim_{n\rightarrow+\infty}P(2\sqrt{n}(\oset[-.3ex]{-}{X}-3.5)\le 2/\sqrt{n})=\\\\
+	1-\Phi(0)=0.5
 	$.\\\\
 	\end{large}
 \end{document}
