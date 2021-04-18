@@ -149,6 +149,26 @@
 	ошибка первого рода: $\alpha_1(\delta)=P_{H_0}(X_i\in\mathbb{N})=0$, так как нормальное распределение абсолютно непрерывно и вероятность получить 0 или натуральное число равна нулю;\\\\
 	ошибка второго рода: $\alpha_2(\delta)=P_{H_1}(X_i\notin \mathbb{N})=0$, так как случайная величина с распределением Пуассона может быть равна 0, 1, 2, 3, ..., но не дробному числу.
 	\section*{3}
-	
+	$
+	\lim_{n\rightarrow+\infty}\beta(\delta_n)=1\\\\
+	1-\lim_{n\rightarrow+\infty}\alpha_2(\delta_n)=1\\\\
+	\lim_{n\rightarrow+\infty}\alpha_2(\delta_n)=0\\\\
+	\delta_n=\delta_n(X_1,...,X_n,y)=\left\{ {\begin{array}{l}
+		H_0, \oset[-.3ex]{-}{X}<-n^y \\
+		H_1, \oset[-.3ex]{-}{X}\ge -n^y \\
+		\end{array} } \right.\\\\\\
+	\lim_{n\rightarrow+\infty}\alpha_2(\delta_n)=\lim_{n\rightarrow+\infty}P_{H_1}(\oset[-.3ex]{-}{X}<-n^y)
+	$\\\\
+	пусть $a=0$\\
+	применим ЦПТ:\\\\
+	$
+	\lim_{n\rightarrow+\infty}P(\sqrt{n}\oset[-.3ex]{-}{X}<z)=\Phi(z)\\\\
+	\lim_{n\rightarrow+\infty}P(\sqrt{n}\oset[-.3ex]{-}{X}<-n^y*\sqrt{n})=\lim_{n\rightarrow+\infty}\Phi(-n^y*\sqrt{n})=0\\\\
+	\lim_{n\rightarrow+\infty}(-n^y*\sqrt{n})=-\infty\\\\
+	\lim_{n\rightarrow+\infty}n^y*\sqrt{n}=+\infty\\\\
+	\lim_{n\rightarrow+\infty}n^{y+1/2}=+\infty\\\\
+	y+1/2>0\\\\
+	y>-1/2.
+	$
 	\end{large}
 \end{document}
